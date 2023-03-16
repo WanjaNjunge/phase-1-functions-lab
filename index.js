@@ -1,27 +1,27 @@
 // Code your solution in this file!
 
-function distanceFromHqInBlocks(pickupLocation) {
-  if (pickupLocation > 42) {
-    return pickupLocation - 42;
+function distanceFromHqInBlocks(blockLocation) {
+  if (blockLocation > 42) {
+    return blockLocation - 42;
   } else {
-    return 42 - pickupLocation;
+    return 42 - blockLocation;
   }
 }
 
-function distanceFromHqInFeet(pickupLocation) {
-  return distanceFromHqInBlocks(pickupLocation) * 264;
+function distanceFromHqInFeet(blockLocation) {
+  return distanceFromHqInBlocks(blockLocation) * 264;
 }
 
-function distanceTravelledInFeet(startBlock, endBlock) {
-  if (startBlock > endBlock) {
-    return (startBlock - endBlock) * 264;
+function distanceTravelledInFeet(start, end) {
+  if (start > end) {
+    return (start - end) * 264;
   } else {
-    return (endBlock - startBlock) * 264;
+    return (end - start) * 264;
   }
 }
 
-function calculatesFarePrice(startBlock, endBlock) {
-  const distance = distanceTravelledInFeet(startBlock, endBlock);
+function calculatesFarePrice(start, end) {
+  const distance = distanceTravelledInFeet(start, end);
   if (distance <= 400) {
     return 0;
   } else if (distance <= 2000) {
